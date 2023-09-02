@@ -1,13 +1,85 @@
+.head {
+  background-color: #010101;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.head-call {
+  background-color: #212121;
+}
+
+.service {
+  margin: 0px 75px;
+}
+.but:hover {
+  color: red;
+  background-color: #fff;
+}
+
+.sidebar-content {
+  padding-top: 150px;
+}
+.sidebar-content p {
+  font-size: 20px;
+}
+
+.sidebar-content h5 {
+  padding-top: 50px;
+  font-size: 25px;
+}
+
+.sidebar-content h3 {
+  font-size: 48px;
+}
+.sidebar-content h4 {
+  color: #da1e0e;
+  font-size: 48px;
+}
+.disclaimer {
+  font-size: 12px;
+  font-family: montserrat-regular;
+  text-align: justify !important;
+}
+
+.disclaimer span {
+  font-weight: 700;
+}
+.terms a {
+  color: rgb(200, 27, 27);
+  font-size: larger;
+}
+.icon {
+  background-color: #212121;
+}
+.arrow {
+  fill: #fff;
+}
+.link-name:hover {
+  color: #da1e0e;
+}
+.social-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.anchor {
+  color: black;
+}
+.anchor:hover {
+  color: red;
+}
+
+.MotorCycle {
+  background-color: #181818;
+}
+.high {
+  color: #c93b2b;
+}
+.backgroundColor {
+  background-color: #212121;
+}
+
+.imgbg:hover {
+  background-color: #181818;
 }
