@@ -83,3 +83,33 @@ body {
 .imgbg:hover {
   background-color: #181818;
 }
+
+.demo {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://www.theautomotiveindia.com/forums/data/attachments/288/288197-73d6599d0c0b3de1792c354b2d30434d.jpg);
+  background-size: cover;
+}
+.login {
+  height: 30vh;
+}
+.value::placeholder {
+  color: white;
+}
+
+.value {
+  background: transparent;
+  border: 3px solid white;
+  color: white;
+  font-size: 20px;
+  outline: none;
+}
+.forgot {
+  color: white;
+}
+.forgot:hover {
+  color: red;
+}
+.gender{
+  padding-left: 110px;
+}
