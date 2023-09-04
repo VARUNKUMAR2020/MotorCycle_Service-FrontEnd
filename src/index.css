@@ -113,3 +113,9 @@ body {
 .gender{
   padding-left: 110px;
 }
+input[type=checkbox] {
+  transform: scale(2);
+}
+input[type=radio]{
+  transform: scale(1.5);
+}

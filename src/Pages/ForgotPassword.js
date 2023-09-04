@@ -38,9 +38,11 @@ const ForgotPassword = () => {
         <h4 className="text-center fs-2 text-light pt-5">
           New to royalenfield.com?
         </h4>
-        <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
-          Create a Account
-        </button>
+        <Link to="/signup" className="text-decoration-none">
+          <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
+            Create a Account
+          </button>
+        </Link>
       </div>
     </div>
   );
