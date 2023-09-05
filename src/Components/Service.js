@@ -2,7 +2,7 @@ import React from "react";
 import image1 from "../Assets/Home/image1.avif";
 import image2 from "../Assets/Home/image2.avif";
 import image3 from "../Assets/Home/image3.avif";
-import symbol from "../Assets/arrow.svg";
+import symbol from "../Assets/Icon/Back-Arrow.png";
 
 const Service = () => {
   return (

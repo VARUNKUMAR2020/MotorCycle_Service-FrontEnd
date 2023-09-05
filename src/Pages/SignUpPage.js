@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import BackArrow from "../Assets/Icon/Back-Arrow.png";
-import { Link } from "react-router-dom";
+import { Link,Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUpPage = () => {
+ 
+  const Navigate = useNavigate();
+
   const [firstName, setfirstName] = useState();
   const [lastName, setlastName] = useState();
   const [gender, setGender] = useState();
@@ -12,15 +17,30 @@ const SignUpPage = () => {
   const [password, setPassword] = useState();
   const [mobile, setMobile] = useState();
   const [terms, setTerms] = useState(false);
+  const [dobInputField, setdobInputField] = useState("text");
 
-  console.log(terms);
-  
   const handleSubmit = () => {
-   if(terms){
-     axios.post("")
-   }else{
-      alert("Check the Terms and Condition");
-   }
+    if (terms) {
+      axios.post("http://localhost:3000/royalenfield/register", {
+        firstName,
+        lastName,
+        gender,
+        dob,
+        email,
+        password,
+        mobile,
+      }).then((res)=>{
+        console.log(res.data.status);
+        if(res.data.status){
+           toast(res.data.message)
+           Navigate("/servicepage")
+        }else{
+          toast(res.data.message)
+        }
+      })
+    } else {
+      toast("Please fill all Details")
+    }
   };
 
   return (
@@ -73,9 +93,11 @@ const SignUpPage = () => {
         </div>
         <div className="col-md-6 text-start">
           <input
-            type="text"
-            className=" value mt-5 w-75 p-2"
+            type={dobInputField}
+            className=" value mt-5 w-75 p-2 date"
             placeholder="Date Of Birth"
+            onFocus={() => setdobInputField("date")}
+            onBlur={() => setdobInputField("text")}
             onChange={(e) => setdob(e.target.value)}
           />
         </div>
@@ -161,7 +183,7 @@ const SignUpPage = () => {
           </button>
         </div>
         <div className="col-md-6 text-center">
-          <Link to="/forgotPassword" className="text-decoration-none">
+          <Link to="/" className="text-decoration-none">
             <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
               <img src={BackArrow} alt="Login" />
               Go Back
@@ -169,6 +191,7 @@ const SignUpPage = () => {
           </Link>
         </div>
       </section>
+      <ToastContainer />
     </div>
   );
 };

@@ -1,7 +1,26 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const handleLogin = () => {
+    axios.post("http://localhost:3000/royalenfield/login", { email, password })
+      .then((res)=>{
+        if(res.data.status === "true"){
+          toast(res.data.message);
+          console.log(res.data.message);
+        }else{
+          toast(res.data.message);
+          console.log(res.data.message);
+        }
+      })
+      .catch((err)=>console.log(err))
+  };
   return (
     <div className="demo container-fluid">
       <div className="row ms-5 login align-items-end ">
@@ -13,6 +32,7 @@ const Login = () => {
             type="text"
             placeholder="Email"
             className="px-2 py-2 fs-5 value w-75"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="col-sm-6 ">
@@ -20,28 +40,35 @@ const Login = () => {
             type="password"
             placeholder="Password"
             className="px-2 py-2 fs-5 w-50 value"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
       </div>
       <div className="row ms-5 pt-4 login">
         <div className="col-md-6 text-end">
-          <button className="w-75 h-25 fs-5 rounded-3">Login</button>
+          <button className="w-75 h-25 fs-5 rounded-3" onClick={handleLogin}>
+            Login
+          </button>
         </div>
         <div className="col-md-6 pt-4 p-5">
-          <Link to="/forgotPassword" className="text-decoration-none"><h6 className="fs-4 forgot">
-            Forgot Password?
-          </h6></Link>
+          <Link to="/forgotPassword" className="text-decoration-none">
+            <h6 className="fs-4 forgot">Forgot Password?</h6>
+          </Link>
         </div>
       </div>
       <div>
         <h4 className="text-center fs-2 text-light">
           New to royalenfield.com?
         </h4>
-       <Link to="/signup" className="text-decoration-none"><button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
-          Create a Account
-        </button></Link>
+        <Link to="/signup" className="text-decoration-none">
+          <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
+            Create a Account
+          </button>
+        </Link>
       </div>
+      <ToastContainer />
     </div>
+   
   );
 };
 
