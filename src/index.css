@@ -17,6 +17,10 @@ body {
   background-color: #fff;
 }
 
+.but{
+  color:white;
+}
+
 .sidebar-content {
   padding-top: 150px;
 }
@@ -86,8 +90,8 @@ body {
 
 .demo {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://www.theautomotiveindia.com/forums/data/attachments/288/288197-73d6599d0c0b3de1792c354b2d30434d.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url(https://images.thequint.com/thequint%2F2016-03%2F8772da12-9abb-4340-85aa-65a807e15b0b%2FHero.jpg?auto=format%2Ccompress&fmt=webp&width=720&w=1200);
   background-size: cover;
 }
 .login {
@@ -110,17 +114,47 @@ body {
 .forgot:hover {
   color: red;
 }
-.gender{
+.gender {
   padding-left: 110px;
 }
-input[type=checkbox] {
+input[type="checkbox"] {
   transform: scale(2);
 }
-input[type=radio]{
+input[type="radio"] {
   transform: scale(1.5);
 }
-.otp{
-  width:100px;
-  height: 50px;
-  font-size: 30px;
+.otp {
+  width: 100px;
+  height: 42px;
+  font-size: 20px;
 }
+.call {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+    url(https://www.team-bhp.com/forum/attachments/motorbikes/1488085d1458455797-royal-enfield-himalayan-thread-royalenfieldthehimalayanmotorcycletestingvideos5.jpg);
+}
+.img-bg1 {
+  background-image: url("./Assets/Home/image1.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.img-bg2 {
+  background-image: url("./Assets/Home/image2.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.img-bg3 {
+  background-image: url("./Assets/Home/image3.avif");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.home {
+  min-height: 100vh;
+}
+.main-div{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+

@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -12,10 +11,10 @@ const Login = () => {
     axios.post("http://localhost:3000/royalenfield/login", { email, password })
       .then((res)=>{
         if(res.data.status === "true"){
-          toast(res.data.message);
+          toast.success(res.data.message);
           console.log(res.data.message);
         }else{
-          toast(res.data.message);
+          toast.error(res.data.message);
           console.log(res.data.message);
         }
       })
@@ -66,7 +65,6 @@ const Login = () => {
           </button>
         </Link>
       </div>
-      <ToastContainer />
     </div>
    
   );

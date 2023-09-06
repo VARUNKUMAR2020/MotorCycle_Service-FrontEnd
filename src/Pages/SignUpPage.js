@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import BackArrow from "../Assets/Icon/Back-Arrow.png";
-import { Link,Navigate, useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-hot-toast";
 
 const SignUpPage = () => {
  
@@ -32,10 +31,10 @@ const SignUpPage = () => {
       }).then((res)=>{
         console.log(res.data.status);
         if(res.data.status){
-           toast(res.data.message)
+           toast.success(res.data.message)
            Navigate("/servicepage")
         }else{
-          toast(res.data.message)
+          toast.error(res.data.message)
         }
       })
     } else {
@@ -191,7 +190,6 @@ const SignUpPage = () => {
           </Link>
         </div>
       </section>
-      <ToastContainer />
     </div>
   );
 };

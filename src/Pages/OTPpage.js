@@ -4,36 +4,57 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-const ForgotPassword = () => {
+const OTPpage = () => {
   const Navigate = useNavigate();
-
-  const [email, setEmail] = useState("");
-
-  const handleSendOTP = () => {
+  const [UserOTP, setOTP] = useState("");
+  const handleVerify = () => {
     axios
-      .post("http://localhost:3000/royalenfield/forgotPassword", { email })
+      .post("http://localhost:3000/royalenfield/verify", { UserOTP })
       .then((res) => {
         if (res.data.status) {
-          Navigate("/otppage");
           toast.success(res.data.message);
+          Navigate("/resetPassword");
         } else {
           toast.error(res.data.message);
         }
       })
-      .catch((err) => console.log("Error", err));
+      .catch((err) => console.log(err));
   };
 
   return (
     <div className="demo container-fluid">
-      <h4 className="h4 text-center text-light fs-1 pt-5">Enter your Email</h4>
-
+      <h4 className="h4 text-center text-light fs-1 pt-5">
+        Please Enter Your OTP
+      </h4>
       <div className="row text-center">
-        <div className="col">
+        <div className="col pt-5">
           <input
             type="text"
-            className=" value mt-5 w-50 p-2"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
+            className=" value otp text-center mx-3"
+            placeholder="_"
+            maxLength="1"
+            onChange={(e) => setOTP(UserOTP  + e.target.value)}
+          />
+          <input
+            type="text"
+            className=" value otp text-center mx-3"
+            placeholder="_"
+            maxLength="1"
+            onChange={(e) => setOTP(UserOTP  + e.target.value)}
+          />
+          <input
+            type="text"
+            className=" value otp text-center mx-3"
+            placeholder="_"
+            maxLength="1"
+            onChange={(e) => setOTP(UserOTP  + e.target.value)}
+          />
+          <input
+            type="text"
+            className=" value otp text-center mx-3"
+            placeholder="_"
+            maxLength="1"
+            onChange={(e) => setOTP(UserOTP  + e.target.value)}
           />
         </div>
       </div>
@@ -41,9 +62,9 @@ const ForgotPassword = () => {
         <div className="col">
           <button
             className="w-25 mt-5 h-50 fs-5 rounded-3"
-            onClick={handleSendOTP}
+            onClick={handleVerify}
           >
-            Send OTP
+            Verify
           </button>
         </div>
       </div>
@@ -71,4 +92,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default OTPpage;

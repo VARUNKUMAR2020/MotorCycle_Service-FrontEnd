@@ -1,8 +1,16 @@
-import React from "react";
-import BackArrow from "../Assets/Icon/Back-Arrow.png";
+import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const ResetPassword = () => {
+
+  const[password,setPassword] = useState();
+  const[confirmPassword,setconfirmPasswod] = useState();
+
+  // const handleReset=()=>{
+  //   axios.post("")
+  // }
+
   return (
     <div className="demo container-fluid">
       <h4 className="h4 text-center text-light fs-1 pt-5">
@@ -14,6 +22,7 @@ const ResetPassword = () => {
             type="text"
             className=" value mt-5 w-50 p-2"
             placeholder="Password"
+            onChange={(e)=>setPassword(e.target.value)}
           />
         </div>
       </div>
@@ -23,13 +32,14 @@ const ResetPassword = () => {
             type="text"
             className=" value mt-5 w-50 p-2"
             placeholder="Confirm Password"
+            onChange={(e)=>setconfirmPasswod(e.target.value)}
           />
         </div>
       </div>
       <div className="row text-center">
         <div className="col">
           <Link to="/">
-            <button className=" mt-5 h-50 fs-5 rounded-3 px-3">
+            <button className=" mt-5 h-50 fs-5 rounded-3 px-3" >
              Reset Password
             </button>
           </Link>
