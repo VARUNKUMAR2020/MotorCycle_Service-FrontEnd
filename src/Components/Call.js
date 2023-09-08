@@ -42,11 +42,19 @@ const Call = () => {
               <div className="col-md-6">
                 <select className=" p-2 my-1 w-100">
                   <option value="">State*</option>
+                  <option value="">Tamil Nadu</option>
                 </select>
               </div>
               <div className="col-md-6 text-start">
                 <select className=" p-2 my-1 w-100">
                   <option value="">City*</option>
+                  <option value="">Chennai</option>
+                  <option value="">Vellore</option>
+                  <option value="">Salem</option>
+                  <option value="">Nammakkal</option>
+                  <option value="">Kanchipuram</option>
+                  <option value="">Chengalpattu</option>
+                  <option value="">Kanyakumari</option>
                 </select>
               </div>
             </div>
@@ -57,7 +65,7 @@ const Call = () => {
             </select>
 
             {/* Radio Buttons */}
-            <div className="row ps-2">
+            <div className="row ps-3">
               <div className="col-md-6 form-check">
                 <input
                   type="radio"
@@ -93,9 +101,13 @@ const Call = () => {
               </div>
               <div className="col-md-6">
                 <select className="p-2 my-3 d-block w-100">
-                  <option value="" disabled selected>
-                    Select MotorCycle Model*
-                  </option>
+                  <option value="">Select MotorCycle Model*</option>
+                  <option value="">Classic 350</option>
+                  <option value="">Classic 500</option>
+                  <option value="">Select MotorCycle Model*</option>
+                  <option value="">Select MotorCycle Model*</option>
+                  <option value="">Select MotorCycle Model*</option>
+                  <option value="">Select MotorCycle Model*</option>
                 </select>
               </div>
             </div>

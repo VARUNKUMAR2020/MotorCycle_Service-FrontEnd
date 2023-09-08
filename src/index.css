@@ -17,8 +17,11 @@ body {
   background-color: #fff;
 }
 
-.but{
-  color:white;
+.but {
+  color: rgb(245, 243, 243);
+  background-color: transparent;
+  outline-width: 2px;
+  outline-color: #fff;
 }
 
 .sidebar-content {
@@ -78,14 +81,16 @@ body {
   background-color: #181818;
 }
 .high {
-  color: #c93b2b;
+  color: #da291c;
 }
+
 .backgroundColor {
   background-color: #212121;
 }
 
 .imgbg:hover {
   background-color: #181818;
+  cursor: pointer;
 }
 
 .demo {
@@ -138,23 +143,108 @@ input[type="radio"] {
   background-image: url("./Assets/Home/image1.avif");
   background-repeat: no-repeat;
   background-size: cover;
-
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
 }
+
+.img-bg1:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("./Assets//Home//image1.avif");
+}
+
 .img-bg2 {
   background-image: url("./Assets/Home/image2.avif");
   background-repeat: no-repeat;
   background-size: cover;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.img-bg2:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./Assets//Home//image2.avif");
+  cursor: pointer;
 }
 .img-bg3 {
   background-image: url("./Assets/Home/image3.avif");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.img-bg3:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./Assets//Home//image3.avif");
 }
 .home {
-  min-height: 100vh;
+  height: 90vh;
 }
-.main-div{
-  background-color: rgba(0, 0, 0, 0.6);
+.main-div {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.my-nav {
+  color: white;
+}
+.my-nav:hover {
+  color: #da1e0e;
+}
+.model {
+  background-color: #282828;
+}
+.cal-bg {
+  background-color: #181818;
+}
+.list {
+  list-style-type: none;
+}
+.dropdown-select {
+  width: 300px;
+  margin: 20px 0px 20px 50px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: white;
+  font-size: 20px;
+}
+
+.options {
+  color: #181818;
+  background-color: transparent;
+}
+.bs-highlight {
+  cursor: pointer;
+}
+
+.bs-highlight:hover {
+  color: #da1e0e;
+}
+
+.cal {
+  border: 5px solid #c93b2b;
+  background-color: #501610;
+  color: white;
+}
+
+.cal:hover {
+  font-weight: bold;
+}
+.sub-text{
+  color: #949494;
+}
+.edit-button{
+  color: #948440;
+  letter-spacing: 1px;
+}
+
+.discliamer{
+  font-size: 12px;
 }
 

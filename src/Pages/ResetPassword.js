@@ -7,9 +7,6 @@ const ResetPassword = () => {
   const[password,setPassword] = useState();
   const[confirmPassword,setconfirmPasswod] = useState();
 
-  // const handleReset=()=>{
-  //   axios.post("")
-  // }
 
   return (
     <div className="demo container-fluid">

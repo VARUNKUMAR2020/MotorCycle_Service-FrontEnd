@@ -1,7 +1,7 @@
 import React from "react";
 import icon1 from "../Assets/Icon/footerpointer.svg";
 import icon2 from "../Assets/Icon/footermap.svg";
-import arrow from "../Assets/arrow.svg";
+import arrow from "../Assets/Icon/Forward-arrow.svg"
 
 const Redirect = () => {
   return (
@@ -13,7 +13,7 @@ const Redirect = () => {
             <span className="d-block ps-4 my-2 text-light link-name ">
               Book a Test Drive
               <span className="arrow">
-                <img src={arrow} alt="arrow" />
+                <img src={arrow} alt="arrow"  />
               </span>
             </span>
           </a>

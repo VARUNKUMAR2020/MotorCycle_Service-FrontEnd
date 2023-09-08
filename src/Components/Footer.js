@@ -4,6 +4,7 @@ import twitter from "../Assets/Icon/twitter.svg";
 import youtube from "../Assets/Icon/youtube.svg";
 import instagram from "../Assets/Icon/instagram.svg";
 import linkedin from "../Assets/Icon/linkedin.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,28 +12,28 @@ const Footer = () => {
       <div className="text-end p-3 ">
         <h6 className="d-inline-block px-2 pt-2 h6">Join the conversation</h6>
         <span className="px-2">
-          <a href="https://www.facebook.com/RoyalEnfield" target="_blank">
-            <img src={facebook} className="social-logo" />
+          <a href="https://www.facebook.com/RoyalEnfield" target="_blank" rel="noreferrer">
+            <img alt="social-media" src={facebook} className="social-logo" />
           </a>
         </span>
         <span className="px-2">
-          <a href="https://twitter.com/royalenfield?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
-            <img src={twitter} className="social-logo" />
+          <a href="https://twitter.com/royalenfield?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noreferrer">
+            <img alt="social-media" src={twitter} className="social-logo" />
           </a>
         </span>
         <span className="px-2">
-          <a href="https://www.youtube.com/@royalenfield" target="_blank">
-            <img src={youtube} className="social-logo" />
+          <a href="https://www.youtube.com/@royalenfield" target="_blank" rel="noreferrer">
+            <img alt="social-media" src={youtube} className="social-logo" />
           </a>
         </span>
         <span className="px-2">
-          <a href="https://www.instagram.com/royalenfield/?hl=en" target="_blank">
-            <img src={instagram} className="social-logo" />
+          <a href="https://www.instagram.com/royalenfield/?hl=en" target="_blank" rel="noreferrer">
+            <img alt="social-media" src={instagram} className="social-logo" />
           </a>
         </span>
         <span className="px-2">
-          <a href="https://www.linkedin.com/company/royal-enfield/" target="_blank">
-            <img src={linkedin} className="social-logo" />
+          <a href="https://www.linkedin.com/company/royal-enfield/" target="_blank" rel="noreferrer">
+            <img alt="social-media" src={linkedin} className="social-logo" />
           </a>
         </span>
         <hr />
@@ -40,60 +41,60 @@ const Footer = () => {
       <div className="row pt-4 mx-5">
         <div className="col-md-2   col-sm-6   text-start">
           <h6 className="">MotoroCycles</h6>
-          <a href="" className="text-decoration-none pt-2 d-block anchor ">
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
             Super Meteor 650
-          </a>
-          <a href="" className="text-decoration-none pt-2 d-block anchor ">
+          </Link>
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
             Hunter 350
-          </a>
-          <a href="" className="text-decoration-none pt-2 d-block anchor ">
+          </Link>
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
             Scram 411
-          </a>
-          <a href="" className="text-decoration-none pt-2 d-block anchor ">
+          </Link>
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
             Classic 350
-          </a>
-          <a href="" className="text-decoration-none pt-2 d-block anchor ">
+          </Link>
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
             Meteor 350
-          </a>
-          <a href="" className="text-decoration-none pt-2 d-block anchor pb-3">
+          </Link>
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3">
             Interceptor 650
-          </a>
+          </Link>
         </div>
         <div className="col-md-2   col-sm-6  ">
           <h6>Rides & Events</h6>
-          <a href="" className="text-decoration-none pt-2 d-block anchor pb-3 ">
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3 ">
             Rides
-          </a>
+          </Link>
         </div>
         <div className="col-md-2 col-sm-6  ">
           <h6>Support</h6>
-          <a href="" className="text-decoration-none pt-2 d-block anchor pb-3">
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3">
             Contact Us
-          </a>
+          </Link>
         </div>
         <div className="col-md-2  col-sm-6  ">
           <h6>About Us</h6>
-          <a href="" className="text-decoration-none pt-2 d-block anchor pb-3">
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3">
             Since 1901
-          </a>
+          </Link>
         </div>
         <div className="col-md-2 col-sm-6 ">
           <h6>News & Media</h6>
-          <a href="" className="text-decoration-none pt-2 d-block anchor ">
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
             News
-          </a>
-          <a href="" className="text-decoration-none pt-2 d-block anchor ">
+          </Link>
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
             Press Releases
-          </a>
-          <a href="" className="text-decoration-none pt-2 d-block anchor pb-3">
+          </Link>
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3">
             Media Kit
-          </a>
+          </Link>
         </div>
         <div className="col-md-2 col-sm-6 ">
           <h6>Our World</h6>
-          <a href="" className="text-decoration-none pt-2 d-block anchor pb-3">
+          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3">
             Royal EnField Web
-          </a>
+          </Link>
         </div>
       </div>
       <hr className="mt-4" />

@@ -70,7 +70,7 @@ const OTPpage = () => {
       </div>
       <div className="row text-center">
         <div className="col">
-          <Link to="/">
+          <Link to="/forgotPassword ">
             <button className=" mt-5 h-50 fs-5 rounded-3 px-3">
               <img src={BackArrow} alt="Login" />
               Go Back

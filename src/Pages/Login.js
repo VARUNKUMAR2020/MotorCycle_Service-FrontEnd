@@ -8,17 +8,16 @@ const Login = () => {
   const [password, setPassword] = useState();
 
   const handleLogin = () => {
-    axios.post("http://localhost:3000/royalenfield/login", { email, password })
-      .then((res)=>{
-        if(res.data.status === "true"){
+    axios
+      .post("http://localhost:3000/royalenfield/login", { email, password })
+      .then((res) => {
+        if (res.data.status) {
           toast.success(res.data.message);
-          console.log(res.data.message);
-        }else{
+        } else {
           toast.error(res.data.message);
-          console.log(res.data.message);
         }
       })
-      .catch((err)=>console.log(err))
+      .catch((err) => console.log(err));
   };
   return (
     <div className="demo container-fluid">
@@ -66,7 +65,6 @@ const Login = () => {
         </Link>
       </div>
     </div>
-   
   );
 };
 
