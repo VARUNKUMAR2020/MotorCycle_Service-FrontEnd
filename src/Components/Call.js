@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Call = () => {
+  const [input, setInput] = useState(false);
+  const [Mobile, setMobile] = useState("");
+  const [buttonColor, setButtonColor] = useState(false);
+
+  const handleInput = () => {
+    setInput(true);
+  };
   return (
     <div className="call">
       <h4 className="h3 text-center text-white head-call p-3">
@@ -29,39 +36,50 @@ const Call = () => {
             <input
               type="text"
               placeholder="Full Name*"
-              className="p-2 my-4 w-100 d-block"
+              className="p-2 my-4 w-100 d-block out"
             />
             <input
               type="text"
               placeholder="Email*"
-              className="p-2  my-4 d-block w-100"
+              className="p-2  my-4 d-block w-100 out"
             />
 
             {/* Dropdowns State & City */}
             <div className="row ">
               <div className="col-md-6">
-                <select className=" p-2 my-1 w-100">
+                <select className=" p-2 my-1 w-100 out">
                   <option value="">State*</option>
                   <option value="">Tamil Nadu</option>
                 </select>
               </div>
               <div className="col-md-6 text-start">
-                <select className=" p-2 my-1 w-100">
+                <select className=" p-2 my-1 w-100 out">
                   <option value="">City*</option>
-                  <option value="">Chennai</option>
-                  <option value="">Vellore</option>
-                  <option value="">Salem</option>
-                  <option value="">Nammakkal</option>
-                  <option value="">Kanchipuram</option>
-                  <option value="">Chengalpattu</option>
-                  <option value="">Kanyakumari</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Vellore">Vellore</option>
+                  <option value="Salem">Salem</option>
+                  <option value="Nammakkal">Nammakkal</option>
+                  <option value="Kanchipuram">Kanchipuram</option>
+                  <option value="Chengalpattu">Chengalpattu</option>
+                  <option value="Kanyakumari">Kanyakumari</option>
                 </select>
               </div>
             </div>
 
             {/*Select Service Center-dropdown*/}
-            <select className="p-2 d-block my-3 w-100">
+            <select className="p-2 d-block my-3 w-100 out">
               <option value="">Select Service Center*</option>
+              <option value="Varun Motors">Varun Motors</option>
+              <option value="Ajith Motors">Ajith Motors</option>
+              <option value="Venkat Motors">Venkat Motors</option>
+              <option value="Dhana Motors">Dhana Motors</option>
+              <option value="Tej Motors">Tej Motors</option>
+              <option value="Gopal Motors">Gopal Motors</option>
+              <option value="SriRanjini Motors">SriRanjini Motors</option>
+              <option value="Vishuwa Motors">Vishuwa Motors</option>
+              <option value="Kavimani Motors">Kavimani Motors</option>
+              <option value="Yazhini Motors">Yazhini Motors</option>
+              <option value="Udhaya Motors">Udhaya Motors</option>
             </select>
 
             {/* Radio Buttons */}
@@ -71,7 +89,7 @@ const Call = () => {
                   type="radio"
                   name="service"
                   value="Self-Drop-Pickup"
-                  className="form-check-input my-3"
+                  className="form-check-input my-3 out"
                 />
                 <label className="form-check-label my-2 fs-5 ms-3 text-light">
                   Self Drop & Pick-Up
@@ -82,7 +100,7 @@ const Call = () => {
                   type="radio"
                   name="service"
                   value="Service-Doorstep"
-                  className="form-check-input my-3"
+                  className="form-check-input my-3 out"
                 />
                 <label className="form-check-label my-2 fs-5 ms-3 text-light">
                   Service At Door-Step
@@ -96,18 +114,22 @@ const Call = () => {
                 <input
                   type="date"
                   placeholder="Full Name*"
-                  className="p-2 my-3 w-100"
+                  className="p-2 my-3 w-100 out"
                 />
               </div>
               <div className="col-md-6">
-                <select className="p-2 my-3 d-block w-100">
+                <select className="p-2 my-3 d-block w-100 out">
                   <option value="">Select MotorCycle Model*</option>
-                  <option value="">Classic 350</option>
-                  <option value="">Classic 500</option>
-                  <option value="">Select MotorCycle Model*</option>
-                  <option value="">Select MotorCycle Model*</option>
-                  <option value="">Select MotorCycle Model*</option>
-                  <option value="">Select MotorCycle Model*</option>
+                  <option value="Classic 350">Classic 350</option>
+                  <option value="Classic 500">Classic 500</option>
+                  <option value="Bullet 350">Bullet 350</option>
+                  <option value="Bullet 500">Bullet 500</option>
+                  <option value="Continental GT 535">Continental GT 535</option>
+                  <option value="Himalayan">Himalayan</option>
+                  <option value="Metero 350">Metero 350</option>
+                  <option value="Super Metero 350">Super Metero 350</option>
+                  <option value="Thunderbird 350">Thunderbird 350</option>
+                  <option value="Thunderbird 500">Thunderbird 500</option>
                 </select>
               </div>
             </div>
@@ -116,14 +138,29 @@ const Call = () => {
             <div className="row">
               <div className="col-md-6">
                 <input
-                  type="text"
+                  type="Number"
                   placeholder="Mobile Number*"
-                  className="p-2 my-3 w-100"
+                  className="p-2 my-3 out-mobile"
+                  onChange={(e) => setMobile(e.target.value)}
                 />
-                <button type="button" className="my-3 otp">
-                  OTP
-                </button>
+                {buttonColor ? (
+                  <button type="button" className="otp">
+                    OTP
+                  </button>
+                ) : (
+                  <button type="button" className="otp-after" onClick={handleInput}>
+                    OTP
+                  </button>
+                )}
               </div>
+              {input && (
+                <div className="col-md-6 mt-4">
+                  <input type="text" maxLength={1} className="mobile-otp" />
+                  <input type="text" maxLength={1} className="mobile-otp" />
+                  <input type="text" maxLength={1} className="mobile-otp" />
+                  <input type="text" maxLength={1} className="mobile-otp" />
+                </div>
+              )}
             </div>
 
             {/* Disclaimer */}

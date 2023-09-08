@@ -52,7 +52,7 @@ const ServiceCostPage = () => {
               </div>
             </div>
 
-            <div className="model mt-3">
+            <div className="model mt-3 pe-3 pb-2">
               <h4 className="text-light ps-3 pt-2 h4 fw-bold">
                 Repair and replacement add on's
               </h4>
@@ -94,7 +94,7 @@ const ServiceCostPage = () => {
 
           {/* Total */}
           <div className="col-md-6 ">
-            <div className="text-light ps-5 fs-5 model ms-3 pb-3">
+            <div className="text-light ps-5 fs-5 model px-3 pb-3">
               <h4 className="text-light ps-3 pt-2 h4 fw-bold">Total</h4>
               <table className="table table-dark table-striped mt-4">
                 <tbody>

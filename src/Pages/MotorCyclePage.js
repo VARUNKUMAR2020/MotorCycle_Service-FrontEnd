@@ -29,7 +29,7 @@ const MotorCyclePage= () => {
                 handleImage(imgData.name, imgData.src);
               }}
             >
-              <a className="text-decoration-none" href="data">
+              <a className="text-decoration-none">
                 <img className="img-fluid" src={imgData.src} alt={imgData.name} />
                 <p className="text-light text-center">{imgData.name}</p>
               </a>

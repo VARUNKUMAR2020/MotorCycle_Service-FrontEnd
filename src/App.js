@@ -12,6 +12,7 @@ import Call from "./Components/Call";
 import MotorCycle from "./Pages/MotorCyclePage";
 import CalculatorPage from "./Pages/CalculatorPage"
 import ServiceCostPage from "./Pages/ServiceCostPage";
+import RidesPage from "./Pages/RidesPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/motorcycle" element={<MotorCycle/>}/>
         <Route path="/calculator" element={<CalculatorPage/>} />
         <Route path="/servicecost" element={<ServiceCostPage/>}/>
+        <Route path="/rides" element={<RidesPage/>}/>
       </Routes>
     </div>
   );

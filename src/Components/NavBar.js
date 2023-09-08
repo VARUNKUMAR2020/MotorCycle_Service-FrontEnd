@@ -13,7 +13,7 @@ const NavBar = () => {
            <Link className="mx-3 text-decoration-none my-nav">Motorcycle</Link>
            <Link className="mx-3 text-decoration-none my-nav">Service</Link>
            <Link className="mx-3 text-decoration-none my-nav">Locate Us</Link>
-           <Link className="mx-3 text-decoration-none my-nav">Ride</Link>
+           <Link to="/rides" className="mx-3 text-decoration-none my-nav">Ride</Link>
            <Link className="mx-3 text-decoration-none my-nav">Support</Link>
         </div>
       </div>
