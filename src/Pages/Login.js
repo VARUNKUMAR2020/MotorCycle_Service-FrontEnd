@@ -2,8 +2,10 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
@@ -13,6 +15,8 @@ const Login = () => {
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);
+          window.localStorage.setItem("token",res.data.data)
+          navigate("/motorgarage");
         } else {
           toast.error(res.data.message);
         }

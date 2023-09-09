@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 const Call = () => {
   const [input, setInput] = useState(false);
   const [Mobile, setMobile] = useState("");
-  const [buttonColor, setButtonColor] = useState(false);
-
+  const [Length, setLength] = useState();
+  console.log(Mobile);
+  console.log(Length);
   const handleInput = () => {
     setInput(true);
   };
@@ -141,14 +142,21 @@ const Call = () => {
                   type="Number"
                   placeholder="Mobile Number*"
                   className="p-2 my-3 out-mobile"
-                  onChange={(e) => setMobile(e.target.value)}
+                  onChange={(e) => {
+                    setMobile(e.target.value);
+                    setLength(Mobile.length);
+                  }}
                 />
-                {buttonColor ? (
-                  <button type="button" className="otp">
+                {Length === 9 ? (
+                  <button
+                    type="button"
+                    className="otp-after"
+                    onClick={handleInput}
+                  >
                     OTP
                   </button>
                 ) : (
-                  <button type="button" className="otp-after" onClick={handleInput}>
+                  <button type="button" className="otp">
                     OTP
                   </button>
                 )}

@@ -328,7 +328,7 @@ input[type="radio"] {
 }
 .Himalayan {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/adventure/desktop/himalayan-odyssey-2023.jpg");
   height: 150px;
@@ -339,7 +339,7 @@ input[type="radio"] {
 }
 .changthang {
   display: flex;
-  align-items: end;
+  align-items:flex-end;
   justify-content: center;
   height: 150px;
   border-radius: 20px;
@@ -350,7 +350,7 @@ input[type="radio"] {
 }
 .Zanskar {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   height: 150px;
   border-radius: 20px;
@@ -361,7 +361,7 @@ input[type="radio"] {
 }
 .white-out {
   display: flex;
-  align-items: end;
+  align-items:flex-end;
   justify-content: center;
   height: 150px;
   border-radius: 20px;
@@ -372,7 +372,7 @@ input[type="radio"] {
 }
 .Eye1 {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   height: 200px;
   width: 300px;
@@ -384,7 +384,7 @@ input[type="radio"] {
 }
 .Eye2 {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   height: 200px;
   width: 300px;
@@ -396,7 +396,7 @@ input[type="radio"] {
 }
 .Eye3 {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   height: 200px;
   width: 300px;
@@ -408,7 +408,7 @@ input[type="radio"] {
 }
 .Eye4 {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   height: 200px;
   width: 300px;
@@ -445,7 +445,8 @@ input[type="radio"] {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/training/training-listing.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/training/training-listing.jpg");
 }
 .trail-1 {
   height: 400px;
@@ -461,5 +462,138 @@ input[type="radio"] {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image:url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/training/desktop/trail-school-level-2.jpg");
+  background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/training/desktop/trail-school-level-2.jpg");
+}
+.gallery {
+  background-color: black;
+}
+.gallery-row-1-1 {
+  border-radius: 10px;
+  height: 400px;
+  width: 360px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/gallery/gallery-7.jpg");
+}
+.gallery-row-1-2 {
+  border-radius: 10px;
+  height: 400px;
+  width: 360px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/gallery/gallery-2.jpg");
+}
+.gallery-row-2-1 {
+  border-radius: 10px;
+  height: 400px;
+  width: 360px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/gallery/gallery-3.jpg");
+}
+.gallery-row-2-2 {
+  border-radius: 10px;
+  height: 400px;
+  width: 360px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/gallery/gallery-4.jpg");
+}
+.gallery-row-3-1 {
+  border-radius: 10px;
+  height: 400px;
+  width: 360px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/gallery/gallery-5.jpg");
+}
+.gallery-row-3-2 {
+  border-radius: 10px;
+  height: 400px;
+  width: 360px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/gallery/gallery-6.jpg");
+}
+.stay-tuned{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRTbHLOSMsz6obuXsKp9KJJ3cmST9PMImaP9mwIbK32Qh_CW0Mx");
+}
+.form-update{
+  background-color: #212121;
+}
+.input-form{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  color: white;
+  padding-left: 15px;
+}
+
+.code{
+  width: 50px;
+}
+.verify{
+  background-color: transparent;
+  color: red;
+  outline: none;
+  border: none;
+  font-size: 20px;
+}
+.form-disclaimer{
+  font-size: 12px;
+  padding-top: 20px;
+}
+.checkbox-form{
+  background-color: transparent;
+  width: 8px;
+}
+.stay-updated{
+ background-color: #DA291C; 
+ outline: none;
+ border: 2px solid red;
+}
+.motor-garage-btn{
+  background-color: transparent;
+  outline: none;
+  border: 1px solid white;
+}
+.service-div{
+  height:300px;
+}
+.motor-input{
+  background-color: transparent;
+  outline: none;
+  border: 1px solid white;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+.add{
+  height: 40px;
+  color: white;
+}
+
+.add:hover{
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+.re-direct{
+  color: white;
+}
+
+.re-direct:hover{
+  color: red;
 }

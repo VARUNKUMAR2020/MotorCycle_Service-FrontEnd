@@ -2,6 +2,8 @@ import React from "react";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import WorldRide from "../Assets/Rides/1.avif";
+import { Link } from "react-router-dom";
+import Redirect from "../Components/Redirect";
 
 const RidesPage = () => {
   return (
@@ -142,18 +144,84 @@ const RidesPage = () => {
 
       {/*  */}
 
-      <div>
-        <div className="row">
-          <div className="col-md-5">
+      <div className="gallery">
+        <div className="row pt-5 justify-content-center">
+          {/* Gallery */}
+          <div className="col-md-6">
             <h3 className="text-light fw-bold">Gallery</h3>
+            {/* row 1 */}
+            <div className="row">
+              <div className="col-md-6 mx-2 gallery-row-1-1"></div>
+              <div className="col-md-6 mx-2 gallery-row-1-2"></div>
+            </div>
+            {/* row-2 */}
+            <div className="row mt-3">
+              <div className="col-md-6 mx-2 gallery-row-2-1"></div>
+              <div className="col-md-6 mx-2 gallery-row-2-2"></div>
+            </div>
+            {/* row-3 */}
+            <div className="row mt-3 pb-5">
+              <div className="col-md-6 mx-2 gallery-row-3-1"></div>
+              <div className="col-md-6 mx-2 gallery-row-3-2"></div>
+            </div>
           </div>
-          <div className="col-md-5">
-            <h3 className="text-light fw-bold">Gallery</h3>
+
+          {/* Stay-tuned */}
+          <div className="col-md-4 stay-tuned mb-5 ">
+            <h3 className="text-light fw-bold">Stay Updated</h3>
+            <div className="d-flex  mt-5 form-update">
+              <div className="updated p-3">
+                <input
+                  type="text"
+                  placeholder="Full Name*"
+                  className="d-block input-form w-100"
+                />
+                <input
+                  type="text"
+                  placeholder="Email Id*"
+                  className="d-block input-form w-100"
+                />
+                <input
+                  type="text"
+                  placeholder="+91"
+                  className="input-form me-5 code"
+                />
+                <input
+                  type="text"
+                  placeholder="Mobile*"
+                  className="input-form w-50"
+                />
+                <button className="verify">Verify</button>
+                <input
+                  type="text"
+                  placeholder="Pincode*"
+                  className="d-block input-form"
+                />
+                <p className="text-light form-disclaimer">
+                  Disclaimer: By signing this form/checking this box, you
+                  acknowledge and agree that we may use the information you
+                  share with us, to communicate with you through e-mails, text
+                  messages, WhatsApp and calls, in order to provide our product
+                  or service related information and/or for promotional and
+                  marketing purposes. All information provided will be secured
+                  and processed as per our{" "}
+                  <Link to="/term">privacy policy.</Link>
+                </p>
+                <input type="checkbox" className="ms-2 checkbox-form" />
+                <p className="text-light form-disclaimer d-inline ms-3">
+                  I accept the <Link to="/term" className="text-light fw-bold">terms and conditions</Link> as
+                  well as <Link to="/term" className="text-light fw-bold">privacy policy.</Link>
+                </p>
+                <button className="stay-updated mt-4 mb-4 text-light px-3 py-2">
+                  STAY UPDATED
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       {/*  */}
-
+      <Redirect />
       <Footer />
     </div>
   );

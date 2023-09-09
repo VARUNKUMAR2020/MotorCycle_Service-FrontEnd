@@ -14,8 +14,9 @@ const ForgotPassword = () => {
       .post("http://localhost:3000/royalenfield/forgotPassword", { email })
       .then((res) => {
         if (res.data.status) {
-          Navigate("/otppage");
           toast.success(res.data.message);
+          window.localStorage.setItem("token",res.data.data);
+          Navigate("/otppage");
         } else {
           toast.error(res.data.message);
         }

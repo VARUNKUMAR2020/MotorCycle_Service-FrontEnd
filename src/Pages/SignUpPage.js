@@ -38,7 +38,7 @@ const SignUpPage = () => {
         }
       })
     } else {
-      toast("Please fill all Details")
+      toast.error("Please Check the Terms and Conditions")
     }
   };
 

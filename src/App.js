@@ -13,6 +13,8 @@ import MotorCycle from "./Pages/MotorCyclePage";
 import CalculatorPage from "./Pages/CalculatorPage"
 import ServiceCostPage from "./Pages/ServiceCostPage";
 import RidesPage from "./Pages/RidesPage";
+import ContactUs from "./Pages/ContactUs";
+import MotorGarage from "./Pages/MotorGarage";
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
         <Route path="/calculator" element={<CalculatorPage/>} />
         <Route path="/servicecost" element={<ServiceCostPage/>}/>
         <Route path="/rides" element={<RidesPage/>}/>
+        <Route path="/contact" element={<ContactUs/>} />
+        <Route path="/motorgarage" element={<MotorGarage/>} />
       </Routes>
     </div>
   );

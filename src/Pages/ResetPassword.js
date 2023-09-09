@@ -1,17 +1,32 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const ResetPassword = () => {
+  const [password, setPassword] = useState();
+  const [confirmPassword, setconfirmPasswod] = useState();
 
-  const[password,setPassword] = useState();
-  const[confirmPassword,setconfirmPasswod] = useState();
-
+  const handleReset = () => {
+    axios
+      .post("http://localhost:3000/royalenfield/changePassword", {
+        password,
+        confirmPassword,
+        token: window.localStorage.getItem("token"),
+      })
+      .then((res) => {
+        if (res.data.status) {
+          toast.success(res.data.message);
+        } else {
+          toast.error(res.data.message);
+        }
+      });
+  };
 
   return (
     <div className="demo container-fluid">
       <h4 className="h4 text-center text-light fs-1 pt-5">
-       Reset Your Password To Explore
+        Reset Your Password To Explore
       </h4>
       <div className="row text-center">
         <div className="col">
@@ -19,25 +34,28 @@ const ResetPassword = () => {
             type="text"
             className=" value mt-5 w-50 p-2"
             placeholder="Password"
-            onChange={(e)=>setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
       </div>
       <div className="row text-center">
         <div className="col">
-        <input
+          <input
             type="text"
             className=" value mt-5 w-50 p-2"
             placeholder="Confirm Password"
-            onChange={(e)=>setconfirmPasswod(e.target.value)}
+            onChange={(e) => setconfirmPasswod(e.target.value)}
           />
         </div>
       </div>
       <div className="row text-center">
         <div className="col">
           <Link to="/">
-            <button className=" mt-5 h-50 fs-5 rounded-3 px-3" >
-             Reset Password
+            <button
+              className=" mt-5 h-50 fs-5 rounded-3 px-3"
+              onClick={handleReset}
+            >
+              Reset Password
             </button>
           </Link>
         </div>
