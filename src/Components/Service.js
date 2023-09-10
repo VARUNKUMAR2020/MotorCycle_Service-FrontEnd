@@ -1,6 +1,5 @@
 import React from "react";
-import symbol from "../Assets/Icon/Forward-arrow.svg";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Service = () => {
@@ -27,8 +26,15 @@ const Service = () => {
           </h4>
           <button className=" but d-block mx-auto ">
             Explore
-            <span className="">
-              <img src={symbol} alt="arrow" />
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                fill="white"
+                className="f-arrow"
+              >
+                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+              </svg>
             </span>
           </button>
         </div>
@@ -44,16 +50,30 @@ const Service = () => {
             <button className=" but mx-3">
               Book Now
               <span>
-                <img src={symbol} alt="arrow" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  fill="white"
+                  className="f-arrow"
+                >
+                  <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                </svg>
               </span>
             </button>
-            <Link to="/login/call">
-            <button className=" but mx-3">
-              Request A Call Back
-              <span>
-                <img src={symbol} alt="arrow" />
-              </span>
-            </button>
+            <Link to="/call">
+              <button className=" but mx-3">
+                Request A Call Back
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 960 960"
+                    fill="white"
+                    className="f-arrow"
+                  >
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </span>
+              </button>
             </Link>
           </div>
         </div>
@@ -68,7 +88,14 @@ const Service = () => {
           <button className="but d-block mx-auto ">
             Explore
             <span className="">
-              <img src={symbol} alt="arrow" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                fill="white"
+                className="f-arrow"
+              >
+                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+              </svg>
             </span>
           </button>
         </div>

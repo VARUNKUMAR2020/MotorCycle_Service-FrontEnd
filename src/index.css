@@ -17,11 +17,25 @@ body {
   background-color: #fff;
 }
 
+.f-arrow{
+  width: 15px;
+  height: 15px;
+  margin-bottom: 2px;
+  margin-left: 5px;
+ 
+}
+
+.f-arrow:hover{
+  fill: red;
+}
+
+
 .but {
   color: rgb(245, 243, 243);
   background-color: transparent;
-  outline-width: 2px;
-  outline-color: #fff;
+  border: 1px solid white;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .sidebar-content {
@@ -162,6 +176,13 @@ input[type="radio"] {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
     url(https://www.team-bhp.com/forum/attachments/motorbikes/1488085d1458455797-royal-enfield-himalayan-thread-royalenfieldthehimalayanmotorcycletestingvideos5.jpg);
 }
+.call-sup {
+  background-size: cover;
+  background-position:center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+    url(https://www.royalenfield.com/content/dam/royal-enfield/india/locate-us/landing/service-centre.jpg);
+}
+
 .img-bg1 {
   background-image: url("./Assets/Home/image1.avif");
   background-repeat: no-repeat;
@@ -596,4 +617,35 @@ input[type="radio"] {
 
 .re-direct:hover{
   color: red;
+}
+.user{
+  color: #CE271B;
+}
+.log-out{
+  background-color: transparent;
+  border: 1px solid white;
+  color: red;
+}
+.log-out:hover{
+  background-color: red;
+  border: 1px solid rgb(237, 161, 20);
+  color: white;
+}
+.status{
+  color:  green;
+}
+.submit{
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+}
+.submit:hover{
+  background-color: #d51904;
+  color: white;
+  border: 1px solid red;
+}
+
+textarea{
+  width: 700px;
+  height: 100px;
 }

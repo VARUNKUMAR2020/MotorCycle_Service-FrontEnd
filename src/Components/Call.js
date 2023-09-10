@@ -1,15 +1,52 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Call = () => {
   const [input, setInput] = useState(false);
-  const [Mobile, setMobile] = useState("");
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [mail, setEmail] = useState("");
   const [Length, setLength] = useState();
-  console.log(Mobile);
-  console.log(Length);
-  const handleInput = () => {
+  const [submit, setSubmit] = useState(false);
+  const [UserOTP, setOTP] = useState("");
+
+  const handleOTP = () => {
     setInput(true);
+    axios
+      .post("http://localhost:3000/royalenfield/otp", { name, mail })
+      .then((res) => {
+        if (res.data.status) {
+          setSubmit(true);
+          toast.success(res.data.message);
+        } else {
+          toast.error(res.data.message);
+        }
+      });
   };
+
+  const handleSubmit = () => {
+    axios
+      .post("http://localhost:3000/royalenfield/callback", {
+        name,
+        mobile,
+        UserOTP,
+        mail,
+      })
+      .then((res) => {
+        if (res.data.status) {
+          toast.success(res.data.message);
+          setName("");
+          setMobile("");
+          setInput(false);
+          setSubmit(false);
+        } else {
+          toast.error(res.data.message);
+        }
+      });
+  };
+
   return (
     <div className="call">
       <h4 className="h3 text-center text-white head-call p-3">
@@ -38,11 +75,13 @@ const Call = () => {
               type="text"
               placeholder="Full Name*"
               className="p-2 my-4 w-100 d-block out"
+              onChange={(e) => setName(e.target.value)}
             />
             <input
-              type="text"
-              placeholder="Email*"
+              type="Number"
+              placeholder="Mobile Number*"
               className="p-2  my-4 d-block w-100 out"
+              onChange={(e) => setMobile(e.target.value)}
             />
 
             {/* Dropdowns State & City */}
@@ -139,19 +178,19 @@ const Call = () => {
             <div className="row">
               <div className="col-md-6">
                 <input
-                  type="Number"
-                  placeholder="Mobile Number*"
+                  type="text"
+                  placeholder="Email*"
                   className="p-2 my-3 out-mobile"
                   onChange={(e) => {
-                    setMobile(e.target.value);
-                    setLength(Mobile.length);
+                    setEmail(e.target.value);
+                    setLength(mail.length);
                   }}
                 />
-                {Length === 9 ? (
+                {Length > 8 ? (
                   <button
                     type="button"
                     className="otp-after"
-                    onClick={handleInput}
+                    onClick={handleOTP}
                   >
                     OTP
                   </button>
@@ -163,10 +202,30 @@ const Call = () => {
               </div>
               {input && (
                 <div className="col-md-6 mt-4">
-                  <input type="text" maxLength={1} className="mobile-otp" />
-                  <input type="text" maxLength={1} className="mobile-otp" />
-                  <input type="text" maxLength={1} className="mobile-otp" />
-                  <input type="text" maxLength={1} className="mobile-otp" />
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="mobile-otp fs-2 text-center"
+                    onChange={(e) => setOTP(UserOTP + e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="mobile-otp fs-2 text-center"
+                    onChange={(e) => setOTP(UserOTP + e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="mobile-otp fs-2 text-center"
+                    onChange={(e) => setOTP(UserOTP + e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    maxLength={1}
+                    className="mobile-otp fs-2 text-center"
+                    onChange={(e) => setOTP(UserOTP + e.target.value)}
+                  />
                 </div>
               )}
             </div>
@@ -190,9 +249,18 @@ const Call = () => {
             </span>
 
             {/* Submit BUtton */}
-            <button className="btn btn-outline-dark d-block my-3">
-              Submit
-            </button>
+            {submit ? (
+              <button
+                className=" d-block my-3 px-3 py-2 submit"
+                onClick={handleSubmit}
+              >
+                Submit
+              </button>
+            ) : (
+              <button className=" d-block my-3 px-3 py-2 " disabled>
+                Submit
+              </button>
+            )}
           </div>
         </div>
       </div>
