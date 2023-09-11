@@ -35,7 +35,7 @@ const MotorGarage = () => {
   const handleAdd = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/royalenfield/addMotor", {
+      .post("https://motorcycle-backend.onrender.com/royalenfield/addMotor", {
         token: window.localStorage.getItem("token"),
         RegNum,
       })
