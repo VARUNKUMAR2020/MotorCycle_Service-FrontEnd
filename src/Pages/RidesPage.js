@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import WorldRide from "../Assets/Rides/1.avif";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Redirect from "../Components/Redirect";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const RidesPage = () => {
+  const navigate = useNavigate()
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [term, setTerms] = useState(false);
+
+  const handleStay = () => {
+    
+    axios
+      .post("https://motorcycle-backend.onrender.com/royalenfield/ride", {
+        name,
+        mail,
+        pincode,
+        term,
+      })
+      .then((res) => {
+        if (res.data.status) {
+          toast.success(res.data.message);
+          navigate("/");
+        } else {
+          toast.error(res.data.message);
+        }
+      });
+  };
+
   return (
     <div>
       <NavBar />
@@ -175,27 +202,19 @@ const RidesPage = () => {
                   type="text"
                   placeholder="Full Name*"
                   className="d-block input-form w-100"
+                  onChange={(e) => setName(e.target.value)}
                 />
                 <input
                   type="text"
                   placeholder="Email Id*"
                   className="d-block input-form w-100"
+                  onChange={(e) => setMail(e.target.value)}
                 />
-                <input
-                  type="text"
-                  placeholder="+91"
-                  className="input-form me-5 code"
-                />
-                <input
-                  type="text"
-                  placeholder="Mobile*"
-                  className="input-form w-50"
-                />
-                <button className="verify">Verify</button>
                 <input
                   type="text"
                   placeholder="Pincode*"
                   className="d-block input-form"
+                  onChange={(e) => setPincode(e.target.value)}
                 />
                 <p className="text-light form-disclaimer">
                   Disclaimer: By signing this form/checking this box, you
@@ -207,12 +226,25 @@ const RidesPage = () => {
                   and processed as per our{" "}
                   <Link to="/term">privacy policy.</Link>
                 </p>
-                <input type="checkbox" className="ms-2 checkbox-form" />
+                <input
+                  type="checkbox"
+                  className="ms-2 checkbox-form"
+                  onChange={() => setTerms(true)}
+                />
                 <p className="text-light form-disclaimer d-inline ms-3">
-                  I accept the <Link to="/term" className="text-light fw-bold">terms and conditions</Link> as
-                  well as <Link to="/term" className="text-light fw-bold">privacy policy.</Link>
+                  I accept the{" "}
+                  <Link to="/term" className="text-light fw-bold">
+                    terms and conditions
+                  </Link>{" "}
+                  as well as{" "}
+                  <Link to="/term" className="text-light fw-bold">
+                    privacy policy.
+                  </Link>
                 </p>
-                <button className="stay-updated mt-4 mb-4 text-light px-3 py-2">
+                <button
+                  className="stay-updated mt-4 mb-4 text-light px-3 py-2"
+                  onClick={handleStay}
+                >
                   STAY UPDATED
                 </button>
               </div>

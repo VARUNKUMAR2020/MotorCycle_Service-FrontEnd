@@ -9,7 +9,7 @@ const ResetPassword = () => {
 
   const handleReset = () => {
     axios
-      .post("http://localhost:3000/royalenfield/changePassword", {
+      .post("https://motorcycle-backend.onrender.com/royalenfield/changePassword", {
         password,
         confirmPassword,
         token: window.localStorage.getItem("token"),
@@ -31,7 +31,7 @@ const ResetPassword = () => {
       <div className="row text-center">
         <div className="col">
           <input
-            type="text"
+            type="password"
             className=" value mt-5 w-50 p-2"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
@@ -41,7 +41,7 @@ const ResetPassword = () => {
       <div className="row text-center">
         <div className="col">
           <input
-            type="text"
+            type="password"
             className=" value mt-5 w-50 p-2"
             placeholder="Confirm Password"
             onChange={(e) => setconfirmPasswod(e.target.value)}
@@ -50,7 +50,7 @@ const ResetPassword = () => {
       </div>
       <div className="row text-center">
         <div className="col">
-          <Link to="/">
+          <Link to="/motorgarage">
             <button
               className=" mt-5 h-50 fs-5 rounded-3 px-3"
               onClick={handleReset}

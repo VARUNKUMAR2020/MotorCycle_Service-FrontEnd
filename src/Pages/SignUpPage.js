@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import BackArrow from "../Assets/Icon/Back-Arrow.png";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const SignUpPage = () => {
- 
   const Navigate = useNavigate();
 
   const [firstName, setfirstName] = useState();
@@ -20,25 +19,27 @@ const SignUpPage = () => {
 
   const handleSubmit = () => {
     if (terms) {
-      axios.post("http://localhost:3000/royalenfield/register", {
-        firstName,
-        lastName,
-        gender,
-        dob,
-        email,
-        password,
-        mobile,
-      }).then((res)=>{
-        console.log(res.data.status);
-        if(res.data.status){
-           toast.success(res.data.message)
-           Navigate("/servicepage")
-        }else{
-          toast.error(res.data.message)
-        }
-      })
+      axios
+        .post("https://motorcycle-backend.onrender.com/royalenfield/register", {
+          firstName,
+          lastName,
+          gender,
+          dob,
+          email,
+          password,
+          mobile,
+        })
+        .then((res) => {
+          if (res.data.status) {
+            window.localStorage.setItem("token", res.data.data);
+            toast.success(res.data.message);
+            Navigate("/motorgarage");
+          } else {
+            toast.error(res.data.message);
+          }
+        });
     } else {
-      toast.error("Please Check the Terms and Conditions")
+      toast.error("Please Check the Terms and Conditions");
     }
   };
 
@@ -126,14 +127,6 @@ const SignUpPage = () => {
       <section className="row ">
         <div className="col-md-6 text-center">
           <input
-            type="dropdown"
-            className=" value mt-5 w-75 p-2"
-            placeholder="Mobile"
-            onChange={(e) => setMobile(e.target.value)}
-          />
-        </div>
-        <div className="col-md-6 text-start">
-          <input
             type="text"
             className=" value mt-5 w-75 p-2"
             placeholder="Mobile"
@@ -175,7 +168,7 @@ const SignUpPage = () => {
       <section className="row">
         <div className="col-md-6 text-center">
           <button
-            className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create"
+            className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5  login-form"
             onClick={handleSubmit}
           >
             Create a Account
@@ -183,7 +176,7 @@ const SignUpPage = () => {
         </div>
         <div className="col-md-6 text-center">
           <Link to="/" className="text-decoration-none">
-            <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
+            <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create login-form">
               <img src={BackArrow} alt="Login" />
               Go Back
             </button>

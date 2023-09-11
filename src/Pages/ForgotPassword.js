@@ -11,7 +11,7 @@ const ForgotPassword = () => {
 
   const handleSendOTP = () => {
     axios
-      .post("http://localhost:3000/royalenfield/forgotPassword", { email })
+      .post("https://motorcycle-backend.onrender.com/royalenfield/forgotPassword", { email })
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);
@@ -41,7 +41,7 @@ const ForgotPassword = () => {
       <div className="row text-center">
         <div className="col">
           <button
-            className="w-25 mt-5 h-50 fs-5 rounded-3"
+            className="w-25 mt-5 h-50 fs-5 rounded-3 login-form"
             onClick={handleSendOTP}
           >
             Send OTP
@@ -51,7 +51,7 @@ const ForgotPassword = () => {
       <div className="row text-center">
         <div className="col">
           <Link to="/login">
-            <button className=" mt-5 h-50 fs-5 rounded-3 px-3">
+            <button className=" mt-5 h-50 fs-5 rounded-3 px-3 login-form">
               <img src={BackArrow} alt="Login" />
               Go Back
             </button>
@@ -63,7 +63,7 @@ const ForgotPassword = () => {
           New to royalenfield.com?
         </h4>
         <Link to="/signup" className="text-decoration-none">
-          <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
+          <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create login-form">
             Create a Account
           </button>
         </Link>

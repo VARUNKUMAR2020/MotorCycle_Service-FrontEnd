@@ -15,6 +15,7 @@ import ServiceCostPage from "./Pages/ServiceCostPage";
 import RidesPage from "./Pages/RidesPage";
 import ContactUs from "./Pages/ContactUs";
 import MotorGarage from "./Pages/MotorGarage";
+import ServiceHistory from "./Pages/ServiceHistory";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/term" element={<TermsPage />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
-        <Route path="/servicepage" element={<ServicePage />} />
+        {/* <Route path="/servicepage" element={<ServicePage />} /> */}
         <Route path="/otppage" element={<OTPpage />} />
         <Route path="/login/call" element={<Call/>} />
         <Route path="/motorcycle" element={<MotorCycle/>}/>
@@ -36,6 +37,7 @@ function App() {
         <Route path="/rides" element={<RidesPage/>}/>
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/motorgarage" element={<MotorGarage/>} />
+        <Route path="/history" element={<ServiceHistory/>}  />
       </Routes>
     </div>
   );

@@ -15,23 +15,25 @@ const MotorGarage = () => {
   const [RegNum, setRegNum] = useState("");
   const [details, setDetails] = useState();
 
+ 
+
   useEffect(() => {
     axios
-      .post("http://localhost:3000/royalenfield/userdata", {
+      .post("https://motorcycle-backend.onrender.com/royalenfield/userdata", {
         token: window.localStorage.getItem("token"),
       })
       .then((res) => {
-        setUser(res.data.data.firstName);
-        setMail(res.data.data.email);
+        setUser(res.data.name);
+        setMail(res.data.mail);
         setDetails(res.data.motorData);
-        toast.success(`Hi ${user} , Welcome to Motor Garage`);
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  },[]);
 
-  const handleAdd = () => {
+  const handleAdd = (e) => {
+    e.preventDefault();
     axios
       .post("http://localhost:3000/royalenfield/addMotor", {
         token: window.localStorage.getItem("token"),
@@ -40,7 +42,6 @@ const MotorGarage = () => {
       .then((res) => {
         toast.success(res.data.message);
         setDetails(res.data.data);
-        console.log("hiii", res.data.data);
       })
       .catch((err) => {
         console.log("Error", err);
@@ -78,7 +79,8 @@ const MotorGarage = () => {
         <h5 className="text-light text-center pt-5 pb-4 h3">
           Welcome to Your Motorcycle Garage
         </h5>
-        {!addMotor && (
+
+        {!addMotor ? (
           <div className="text-end ">
             <button
               className="me-4 motor-garage-btn add py-1 px-3"
@@ -86,12 +88,11 @@ const MotorGarage = () => {
             >
               Add Motorcycle
             </button>
-            <button className="me-4 motor-garage-btn add py-1 px-3">
+            <button className="me-4 motor-garage-btn add py-1 px-3" disabled>
               Ongoing Service
             </button>
           </div>
-        )}
-        {addMotor ? (
+        ) : (
           <div className="d-flex align-items-start justify-content-center service-div pt-5">
             <input
               type="text"
@@ -108,19 +109,21 @@ const MotorGarage = () => {
             />
             <button
               className="mx-5 motor-garage-btn py-1 px-3 add fw-bold"
-              onClick={handleAdd}
+              onClick={(e)=>handleAdd(e)}
             >
               Add
             </button>
             <button
-              className="motor-garage-btn py-1 px-3 add fw-bold"
+              className="motor-garage-btn  px-3 add fw-bold"
               onClick={handleBack}
             >
               Back
             </button>
           </div>
-        ) : details ? (
-          <div className="pt-5 px-5">
+        )}
+
+        {details ? (
+          <div className=" px-5 mt-4">
             <table className="table table-dark table-striped ">
               <thead>
                 <tr>
@@ -147,6 +150,7 @@ const MotorGarage = () => {
             <h3 className="text-light h4 ">No Motorcycle Added</h3>
           </div>
         )}
+
         <Redirect />
       </div>
       <Footer />

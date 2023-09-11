@@ -17,18 +17,16 @@ body {
   background-color: #fff;
 }
 
-.f-arrow{
+.f-arrow {
   width: 15px;
   height: 15px;
   margin-bottom: 2px;
   margin-left: 5px;
- 
 }
 
-.f-arrow:hover{
+.f-arrow:hover {
   fill: red;
 }
-
 
 .but {
   color: rgb(245, 243, 243);
@@ -154,6 +152,17 @@ input[type="radio"] {
   padding-bottom: 3px;
 }
 
+.otp-email {
+  color: #ffffff;
+  width: 70px;
+  height: 42px;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  padding-bottom: 3px;
+  border: 1px solid white;
+}
+
 .otp-after {
   background-color: #da291c;
   color: #ffffff;
@@ -178,7 +187,7 @@ input[type="radio"] {
 }
 .call-sup {
   background-size: cover;
-  background-position:center;
+  background-position: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
     url(https://www.royalenfield.com/content/dam/royal-enfield/india/locate-us/landing/service-centre.jpg);
 }
@@ -360,7 +369,7 @@ input[type="radio"] {
 }
 .changthang {
   display: flex;
-  align-items:flex-end;
+  align-items: flex-end;
   justify-content: center;
   height: 150px;
   border-radius: 20px;
@@ -382,7 +391,7 @@ input[type="radio"] {
 }
 .white-out {
   display: flex;
-  align-items:flex-end;
+  align-items: flex-end;
   justify-content: center;
   height: 150px;
   border-radius: 20px;
@@ -542,16 +551,16 @@ input[type="radio"] {
   background-position: center;
   background-image: url("https://www.royalenfield.com/content/dam/royal-enfield/india/rides/ride-listing/gallery/gallery-6.jpg");
 }
-.stay-tuned{
+.stay-tuned {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRTbHLOSMsz6obuXsKp9KJJ3cmST9PMImaP9mwIbK32Qh_CW0Mx");
 }
-.form-update{
+.form-update {
   background-color: #212121;
 }
-.input-form{
+.input-form {
   background-color: transparent;
   outline: none;
   border: none;
@@ -563,89 +572,108 @@ input[type="radio"] {
   padding-left: 15px;
 }
 
-.code{
+.code {
   width: 50px;
 }
-.verify{
+.verify {
   background-color: transparent;
   color: red;
   outline: none;
   border: none;
   font-size: 20px;
 }
-.form-disclaimer{
+.form-disclaimer {
   font-size: 12px;
   padding-top: 20px;
 }
-.checkbox-form{
+.checkbox-form {
   background-color: transparent;
   width: 8px;
 }
-.stay-updated{
- background-color: #DA291C; 
- outline: none;
- border: 2px solid red;
+.stay-updated {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid red;
 }
-.motor-garage-btn{
+
+.stay-updated:hover {
+  background-color: #d51904;
+  color: white;
+  border: 2px solid black;
+}
+
+.motor-garage-btn {
   background-color: transparent;
   outline: none;
   border: 1px solid white;
 }
-.service-div{
-  height:300px;
+.service-div {
+  height: 300px;
 }
-.motor-input{
+.motor-input {
   background-color: transparent;
   outline: none;
   border: 1px solid white;
   font-size: 20px;
   color: rgb(255, 255, 255);
 }
-.add{
+.add {
   height: 40px;
   color: white;
 }
 
-.add:hover{
+.add:hover {
   background-color: white;
   color: red;
   border: 1px solid red;
 }
-.re-direct{
+.re-direct {
   color: white;
 }
 
-.re-direct:hover{
+.re-direct:hover {
   color: red;
 }
-.user{
-  color: #CE271B;
+.user {
+  color: #ce271b;
 }
-.log-out{
+.log-out {
   background-color: transparent;
   border: 1px solid white;
   color: red;
 }
-.log-out:hover{
+.log-out:hover {
   background-color: red;
   border: 1px solid rgb(237, 161, 20);
   color: white;
 }
-.status{
-  color:  green;
+.status {
+  color: green;
 }
-.submit{
+.submit {
   color: white;
   border: 1px solid white;
   background-color: transparent;
 }
-.submit:hover{
+.submit:hover {
   background-color: #d51904;
   color: white;
   border: 1px solid red;
 }
 
-textarea{
+textarea {
   width: 700px;
   height: 100px;
+}
+.sub {
+  color: white;
+}
+.login-form {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+.login-form:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }

@@ -15,7 +15,7 @@ const Call = () => {
   const handleOTP = () => {
     setInput(true);
     axios
-      .post("http://localhost:3000/royalenfield/otp", { name, mail })
+      .post("https://motorcycle-backend.onrender.com/royalenfield/otp", { name, mail })
       .then((res) => {
         if (res.data.status) {
           setSubmit(true);
@@ -28,7 +28,7 @@ const Call = () => {
 
   const handleSubmit = () => {
     axios
-      .post("http://localhost:3000/royalenfield/callback", {
+      .post("https://motorcycle-backend.onrender.com/royalenfield/callback", {
         name,
         mobile,
         UserOTP,
@@ -245,7 +245,7 @@ const Call = () => {
             {/* Terms and Condiition */}
             <input type="checkbox" className="my-2" />
             <span className="terms ps-3 my-2 text-light">
-              I Accept the <Link href="./">Terms and Conditions</Link>
+              I Accept the <Link to="/term">Terms and Conditions</Link>
             </span>
 
             {/* Submit BUtton */}
@@ -257,7 +257,7 @@ const Call = () => {
                 Submit
               </button>
             ) : (
-              <button className=" d-block my-3 px-3 py-2 " disabled>
+              <button className=" d-block my-3 px-3 py-2 sub" disabled>
                 Submit
               </button>
             )}

@@ -9,7 +9,7 @@ const OTPpage = () => {
   const [UserOTP, setOTP] = useState("");
   const handleVerify = () => {
     axios
-      .post("http://localhost:3000/royalenfield/verify", { UserOTP })
+      .post("https://motorcycle-backend.onrender.com/royalenfield/verify", { UserOTP })
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);
@@ -30,28 +30,28 @@ const OTPpage = () => {
         <div className="col pt-5">
           <input
             type="text"
-            className=" value otp text-center mx-3"
+            className=" value otp-email text-center mx-3"
             placeholder="_"
             maxLength="1"
             onChange={(e) => setOTP(UserOTP  + e.target.value)}
           />
           <input
             type="text"
-            className=" value otp text-center mx-3"
+            className=" value otp-email text-center mx-3"
             placeholder="_"
             maxLength="1"
             onChange={(e) => setOTP(UserOTP  + e.target.value)}
           />
           <input
             type="text"
-            className=" value otp text-center mx-3"
+            className=" value otp-email text-center mx-3"
             placeholder="_"
             maxLength="1"
             onChange={(e) => setOTP(UserOTP  + e.target.value)}
           />
           <input
             type="text"
-            className=" value otp text-center mx-3"
+            className=" value otp-email text-center mx-3"
             placeholder="_"
             maxLength="1"
             onChange={(e) => setOTP(UserOTP  + e.target.value)}
@@ -61,7 +61,7 @@ const OTPpage = () => {
       <div className="row text-center">
         <div className="col">
           <button
-            className="w-25 mt-5 h-50 fs-5 rounded-3"
+            className="w-25 mt-5 h-50 fs-5 rounded-3 login-form"
             onClick={handleVerify}
           >
             Verify
@@ -71,7 +71,7 @@ const OTPpage = () => {
       <div className="row text-center">
         <div className="col">
           <Link to="/forgotPassword ">
-            <button className=" mt-5 h-50 fs-5 rounded-3 px-3">
+            <button className=" mt-5 h-50 fs-5 rounded-3 px-3 login-form">
               <img src={BackArrow} alt="Login" />
               Go Back
             </button>
@@ -83,7 +83,7 @@ const OTPpage = () => {
           New to royalenfield.com?
         </h4>
         <Link to="/signup" className="text-decoration-none">
-          <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
+          <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create login-form">
             Create a Account
           </button>
         </Link>

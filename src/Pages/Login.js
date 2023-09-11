@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleLogin = () => {
     axios
-      .post("http://localhost:3000/royalenfield/login", { email, password })
+      .post("https://motorcycle-backend.onrender.com/royalenfield/login", { email, password })
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);
@@ -29,7 +29,7 @@ const Login = () => {
         <h5 className="text-light text-center fs-1">
           Log in to your Royal Enfield account
         </h5>
-        <div className="col-sm-6 text-end">
+        <div className="col-md-6 text-end">
           <input
             type="text"
             placeholder="Email"
@@ -37,7 +37,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="col-sm-6 ">
+        <div className="col-md-6 ">
           <input
             type="password"
             placeholder="Password"
@@ -48,7 +48,7 @@ const Login = () => {
       </div>
       <div className="row ms-5 pt-4 login">
         <div className="col-md-6 text-end">
-          <button className="w-75 h-25 fs-5 rounded-3" onClick={handleLogin}>
+          <button className="w-75 h-25 fs-5 rounded-3 login-form" onClick={handleLogin}>
             Login
           </button>
         </div>
@@ -63,7 +63,7 @@ const Login = () => {
           New to royalenfield.com?
         </h4>
         <Link to="/signup" className="text-decoration-none">
-          <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5 create">
+          <button className="d-block mx-auto mt-4 px-5 py-2 rounded-3 fs-5  login-form">
             Create a Account
           </button>
         </Link>

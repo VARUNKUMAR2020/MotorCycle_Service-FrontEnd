@@ -12,7 +12,7 @@ const Service = () => {
     Navigate("/login");
   };
   const handleLink3 = () => {
-    Navigate("/login");
+    Navigate("/history");
   };
 
   return (

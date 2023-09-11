@@ -3,14 +3,16 @@ import NavBar from "../Components/NavBar";
 import Redirect from "../Components/Redirect";
 import Footer from "../Components/Footer";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
 const ContactUs = () => {
+  const navigate = useNavigate();
   const [input, setInput] = useState(false);
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
+  const [query, setQuery] = useState("");
   const [mail, setEmail] = useState("");
   const [Length, setLength] = useState();
   const [submit, setSubmit] = useState(false);
@@ -32,19 +34,17 @@ const ContactUs = () => {
 
   const handleSubmit = () => {
     axios
-      .post("http://localhost:3000/royalenfield/callback", {
+      .post("https://motorcycle-backend.onrender.com/royalenfield/help", {
+        UserOTP,
         name,
         mobile,
-        UserOTP,
         mail,
+        query,
       })
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message);
-          setName("");
-          setMobile("");
-          setInput(false);
-          setSubmit(false);
+          navigate("/")
         } else {
           toast.error(res.data.message);
         }
@@ -66,7 +66,7 @@ const ContactUs = () => {
               <div className="sidebar-content text-start ps-5">
                 <h3 className="text-light">We are Here To Help You</h3>
                 <p className="text-light">
-                "To keep a customer demands as much skill as to win one"
+                  "To keep a customer demands as much skill as to win one"
                 </p>
                 <h5 className="text-light">Toll Free Number :</h5>
                 <h4>1800 210 0007</h4>
@@ -108,17 +108,6 @@ const ContactUs = () => {
                     <option value="Chengalpattu">Chengalpattu</option>
                     <option value="Kanyakumari">Kanyakumari</option>
                   </select>
-                </div>
-              </div>
-
-              {/* Date and Model */}
-              <div className="row">
-                <div className="col-md-6">
-                  <input
-                    type="date"
-                    placeholder="Date Of Birth*"
-                    className="p-2 my-3 w-100 out"
-                  />
                 </div>
               </div>
 
@@ -179,10 +168,15 @@ const ContactUs = () => {
               </div>
 
               {/* Text Area */}
-                <div>
-                  <label className="d-block text-light fw-bold pb-3 fs-5">Leave your Query's</label>
-                   <textarea placeholder="You can dropy your query regarding what area We should Help you"></textarea>
-                </div>
+              <div>
+                <label className="d-block text-light fw-bold pb-3 fs-5">
+                  Leave your Query's
+                </label>
+                <textarea
+                  placeholder="You can dropy your query regarding what area We should Help you"
+                  onChange={(e) => setQuery(e.target.value)}
+                ></textarea>
+              </div>
 
               {/* Disclaimer */}
               <p className="disclaimer text-light">

@@ -62,31 +62,31 @@ const Footer = () => {
         </div>
         <div className="col-md-2   col-sm-6  ">
           <h6>Rides & Events</h6>
-          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3 ">
+          <Link to="/rides" className="text-decoration-none pt-2 d-block anchor pb-3 ">
             Rides
           </Link>
         </div>
         <div className="col-md-2 col-sm-6  ">
           <h6>Support</h6>
-          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3">
+          <Link to="/contact" className="text-decoration-none pt-2 d-block anchor pb-3">
             Contact Us
           </Link>
         </div>
         <div className="col-md-2  col-sm-6  ">
           <h6>About Us</h6>
-          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3">
+          <Link to="/rides" className="text-decoration-none pt-2 d-block anchor pb-3">
             Since 1901
           </Link>
         </div>
         <div className="col-md-2 col-sm-6 ">
           <h6>News & Media</h6>
-          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
+          <Link to="/rides" className="text-decoration-none pt-2 d-block anchor ">
             News
           </Link>
-          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor ">
+          <Link to="/rides" className="text-decoration-none pt-2 d-block anchor ">
             Press Releases
           </Link>
-          <Link to="/motorcycle" className="text-decoration-none pt-2 d-block anchor pb-3">
+          <Link to="/rides" className="text-decoration-none pt-2 d-block anchor pb-3">
             Media Kit
           </Link>
         </div>
@@ -101,9 +101,9 @@ const Footer = () => {
       <div className="d-flex justify-content-between">
         <p className="px-4">&copy; 2023 Designed by Varun</p>
         <p className="px-4">
-          <a href="./" className="text-decoration-none anchor">
+          <Link to="/term" className="text-decoration-none anchor">
             Term and Conditions
-          </a>
+          </Link>
         </p>
       </div>
     </div>
