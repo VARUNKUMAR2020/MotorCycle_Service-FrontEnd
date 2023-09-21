@@ -1,4 +1,4 @@
-<h1> Reset - Password </h1>
+<h1> Motor-Cycle Service</h1>
 
 <h6>Front-End Link - https://varun-motorcycle-service.netlify.app/</h6>
 
