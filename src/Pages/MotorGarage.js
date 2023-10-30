@@ -137,7 +137,7 @@ const MotorGarage = () => {
                 {details.map((detail, index) => (
                   <tr key={index} className="">
                     <td>{detail.reg_no}</td>
-                    <td>Varunkumar</td>
+                    <td>{detail.name}</td>
                     <td>8870187077</td>
                     <td className="status">{detail.status}</td>
                   </tr>

@@ -12,7 +12,6 @@ const NavBar = () => {
         <div className="col-md-8 col-xl-8 text-end pt-3 ">
            <Link to="/motorcycle" className="mx-3 text-decoration-none my-nav">Motorcycle</Link>
            <Link to="/" className="mx-3 text-decoration-none my-nav">Service</Link>
-           <Link to="/rides" className="mx-3 text-decoration-none my-nav">Locate Us</Link>
            <Link to="/rides" className="mx-3 text-decoration-none my-nav">Ride</Link>
            <Link to="/contact" className="mx-3 text-decoration-none my-nav">Support</Link>
         </div>
